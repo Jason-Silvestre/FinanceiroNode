@@ -35,8 +35,7 @@ var emailDoPagador = "jasonsilvestre34@gmail.com";
 
     try{
         var pagamento = await MercadoPago.preferences.create(dados);
-        console.log(pagamento);
-        //Banco.SalvarPagamento({id: id, pagador: email});
+       //Banco.SalvarPagamento({id: id, pagador: email});
         return res.redirect(pagamento.body.init_point);
     }catch(err){
         return res.send(err.message);
@@ -44,10 +43,8 @@ var emailDoPagador = "jasonsilvestre34@gmail.com";
 });
 
 app.post("/not",(req, res) => {
-    console.log(req, query);
-    res.send("Ok");
-   // var id = req.query.id;
-
+    var id = req.query.id;
+       
     setTimeout(() => {
 
         var filtro = {
