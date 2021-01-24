@@ -57,7 +57,6 @@ app.post("/not",(req, res) => {
           var pagamento = data.body.results[0];
           console.log(data);
           if(pagamento != undefined){
-            console.log(pagamento);
             console.log(pagamento.external_reference);
             console.log(pagamento.status);
          }else{
