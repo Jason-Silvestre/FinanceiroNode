@@ -44,7 +44,9 @@ var emailDoPagador = "jasonsilvestre34@gmail.com";
 });
 
 app.post("/not",(req, res) => {
-    var id = req.query.id;
+    console.log(req, query);
+    res.send("Ok");
+   // var id = req.query.id;
 
     setTimeout(() => {
 
