@@ -43,7 +43,36 @@ var emailDoPagador = "jasonsilvestre34@gmail.com";
     }    
 });
 
-app.listen(3000,(req, res) => {
+app.post("/not",(req, res) => {
+    var id = req.query.id;
+
+    setTimeout(() => {
+
+        var filtro = {
+            "order.id": id
+        }
+
+        MercadoPago.payment.search({
+           qs: filtro 
+        }).then(data => {
+         var pagamento = data.body.results[0];
+
+         if(pagamento != undefined){
+            console.log(pagamento.external_reference);
+            console.log(pagamento.status);
+         }else{
+            console.log("Pagamento não existe")
+         }
+      }).catch(err => {
+            console.log(err);
+        });
+
+    },20000)
+
+    res.send("ok");
+});
+
+app.listen(80,(req, res) =>{
+
     console.log("Servidor rodando!");
-    
 });

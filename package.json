@@ -1,5 +1,5 @@
 {
-  "name": "moduloFinanceiro",
+  "name": "mercadopago2020",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mercadopago": "^1.5.3"
+  }
 }
